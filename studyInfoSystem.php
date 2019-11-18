@@ -54,7 +54,7 @@ $nums = mysqli_num_rows($result);
 				<td><?php echo $value["bonus"] ?></td>
 				<td><?php echo $value["city"] ?></td>
 				<td>
-					<a href="">修改</a>
+					<a href="#" onClick="changeFn(<?php echo $value["id"] ?>)">修改</a>
 					<a href="#" onClick="confirmDel(<?php echo $value["id"] ?>)">删除</a>
 				</td>
 			</tr>
@@ -88,7 +88,10 @@ $nums = mysqli_num_rows($result);
 				location.href = "./deleteStudy.php?id=" + id;
 
 			}
-		}
+		};
+		function changeFn(id){
+			location.href = "./changeStudy.php?id=" + id + "&token=5";
+		};
 
 	</script>
 </body>
